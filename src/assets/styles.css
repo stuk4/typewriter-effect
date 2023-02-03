@@ -1,0 +1,33 @@
+
+body, *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #242424;
+    color:ghostwhite;
+
+}
+
+.section{
+    width: 100%;
+}
+
+#typewriter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.typewriter{
+    inline-size: 100%;
+    text-align: left;
+    overflow-wrap: break-word; 
+    hyphens: manual; 
+    -ms-hyphens: manual;
+    -moz-hyphens: manual;
+    -webkit-hyphens: manual;
+  }
