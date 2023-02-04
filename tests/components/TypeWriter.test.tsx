@@ -1,5 +1,5 @@
 import React from "react";
-import { render, cleanup, waitFor } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { TypeWriter } from '../../src/components/TypeWriter';
 import { handleTypeWriter } from "../../src/utils/handleTypeWriter";
 /**
@@ -12,14 +12,17 @@ jest.mock('../../src/utils/handleTypeWriter');
 
 
 describe('TypeWriter component', () => {
-  afterEach(cleanup);
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it('renders the correct element type', () => {
-    const { getByTestId } = render(
-      <TypeWriter elementType="h1" text="Test text" />
+    const tag = "h1"
+    const { getByTestId, } = render(
+      <TypeWriter elementType={tag} text="Test text" />
     );
     const element = getByTestId('typewriter-element');
-    expect(element.tagName).toBe('H1');
+    expect(element.tagName.toLowerCase()).toBe(tag);
   });
 
 
@@ -30,9 +33,12 @@ describe('TypeWriter component', () => {
     const { getByTestId } = render(
       <TypeWriter elementType="h1" text={text} interval={interval} delay={delay} />
     );
-    const element = getByTestId('typewriter-element')
     // waiting delay 
-    await waitFor(() => {expect(handleTypeWriter).toHaveBeenCalledWith(element, text, interval)})
+    const element = getByTestId('typewriter-element')
+    await waitFor(() => {
+      expect(handleTypeWriter).toHaveBeenCalledWith(element, text, interval)
+    })
+
   });
 
 
@@ -44,8 +50,10 @@ describe('TypeWriter component', () => {
     );
     const element = getByTestId('typewriter-element');
     expect(element.classList.contains(className)).toBe(true);
+   
   });
 
+  
   it('matches the snapshot', () => {
     const tree = ReactTestRenderer.create(<TypeWriter elementType="h1" text="Test text" />)
       .toJSON();

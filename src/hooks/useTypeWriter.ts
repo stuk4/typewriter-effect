@@ -5,32 +5,19 @@ interface useTypeWriterProps{
   element:Element | null,
   interval?:number,
   text:string,
-  delay?:number
+  delay?:number,
+  inView:boolean,
 }
-export const useTypeWriter = ({element,interval=20,text,delay=0}:useTypeWriterProps) => {
+export const useTypeWriter = ({element,interval=20,text,delay=0,inView}:useTypeWriterProps) => {
   
-  const handleTypeWriter = useCallback(() => {
-    console.log("salto",element)
-    if (!element) return;
-      let charIndex = 0;
-      const handleAddChar = ( ) => {
-        element.classList.add('typewriter');
-        element.innerHTML += text[charIndex] === "\n" ? "<br>" : text[charIndex];
-        charIndex++;
-        if (charIndex < text.length) {
-          setTimeout(handleAddChar, interval);
-        }
+    useEffect(() => {
+      if (inView) {
+        setTimeout(() =>{
+            handleTypeWriter(element, text,interval)
+        },delay)
       }
-      handleAddChar();
-  },[element])
+  
+  }, [inView])
 
-  useEffect(() => {
-    const timeout = setTimeout(() =>{
-        handleTypeWriter()
-    },delay)
-    return ( ) =>{
-      clearTimeout(timeout)
-    }
-  }, [element])
  
 }
