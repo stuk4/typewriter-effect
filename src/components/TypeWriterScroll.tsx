@@ -1,6 +1,6 @@
 import React, { createElement } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useTypeWriter } from '../hooks/useTypeWriter'
+import { useTypeWriter } from '../hooks/useTypeWriterInView'
 import { ITypeWriterProps } from '../interfaces/ITypeWriter'
 
 export const TypeWriterInScroll = ({

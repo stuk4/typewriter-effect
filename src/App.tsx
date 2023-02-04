@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './assets/styles.css'
 import { TypeWriter } from './components/TypeWriter';
 import { TypeWriterInScroll } from './components/TypeWriterScroll';
-import { useTypeWriter } from './hooks/useTypeWriter';
+import { useTypeWriter } from './hooks/useTypeWriterInView';
 
 function App() {
 
