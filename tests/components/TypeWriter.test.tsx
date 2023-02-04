@@ -1,11 +1,12 @@
 import React from "react";
 import { render, cleanup, waitFor } from '@testing-library/react';
-
 import { TypeWriter } from '../../src/components/TypeWriter';
 import { handleTypeWriter } from "../../src/utils/handleTypeWriter";
 /**
  * @jest-environment jsdom
- */
+*/
+
+const ReactTestRenderer = require('react-test-renderer');
 
 jest.mock('../../src/utils/handleTypeWriter');
 
@@ -21,6 +22,7 @@ describe('TypeWriter component', () => {
     expect(element.tagName).toBe('H1');
   });
 
+
   it('calls handleTypeWriter with correct parameters', async () => {
     const text = 'Test text';
     const interval = 20;
@@ -33,6 +35,8 @@ describe('TypeWriter component', () => {
     await waitFor(() => {expect(handleTypeWriter).toHaveBeenCalledWith(element, text, interval)})
   });
 
+
+
   it('has the correct class name', () => {
     const className = 'test-class';
     const { getByTestId } = render(
@@ -40,5 +44,11 @@ describe('TypeWriter component', () => {
     );
     const element = getByTestId('typewriter-element');
     expect(element.classList.contains(className)).toBe(true);
+  });
+
+  it('matches the snapshot', () => {
+    const tree = ReactTestRenderer.create(<TypeWriter elementType="h1" text="Test text" />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

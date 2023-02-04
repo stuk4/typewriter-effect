@@ -23,5 +23,5 @@ export const TypeWriter = ({
             clearTimeout(timeout)
         }
     }, [])
-    return createElement(Element, {ref: refElement,className:`${classNames}`,"data-testid":"typewriter-element"})
+    return createElement(Element, {ref: refElement,className:`${classNames ? classNames : ""}`,"data-testid":"typewriter-element"})
 }
