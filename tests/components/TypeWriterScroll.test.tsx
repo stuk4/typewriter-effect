@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from '@testing-library/react';
-import {TypeWriterInScroll} from '../../src/components/TypeWriterScroll';
+import {TypeWriterInScroll} from '../../src/components/TypeWriterInView';
 import {setupIntersectionMocking, resetIntersectionMocking} from 'react-intersection-observer/test-utils';
 
 /**

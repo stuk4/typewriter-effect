@@ -1,9 +1,9 @@
-import React, { createElement } from 'react'
+import { createElement } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useTypeWriter } from '../hooks/useTypeWriterInView'
 import { ITypeWriterProps } from '../interfaces/ITypeWriter'
 
-export const TypeWriterInScroll = ({
+export const TypeWriterInView = ({
   elementType: Element,
   text,
   delay = 0,
