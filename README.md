@@ -27,8 +27,8 @@ export const Example = () => {
 }
 
 ```
-### `TypeWriterScroll` component
-To use the `<TypeWriterScroll> `component, the principal diference between the normal is that it uses the library [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for show  the element when is in the viewport . You need pass it the following props:
+### `TypeWriterInView` component
+To use the `<TypeWriterInView> `component, the principal diference between the normal is that it uses the library [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for show  the element when is in the viewport . You need pass it the following props:
 
 | Name                   | Type                      | Default     | Description                                                                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
