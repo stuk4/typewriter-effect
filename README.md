@@ -1,7 +1,9 @@
 <div align="center">
   <img alt="Logo" src="https://github.com/stuk4/typewriter-effect/blob/main/static/500x500.png" width="200" />
 </div>
-
+<div align="center">
+  <img alt="Logo" src="https://github.com/stuk4/typewriter-effect/blob/main/static/gif_hero.gif" width="200" />
+</div>
 
 # Typewriter Effect
 
