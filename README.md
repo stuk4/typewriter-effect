@@ -8,7 +8,7 @@ To use the `<TypeWriter> `component, you need pass it the following props:
 
 | Name                   | Type                      | Default     | Description                                                                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **elementType**               | `Element`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
+| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
 | **text**         | `string`                  | `required`     | A string to apply the effect..
 | **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
 | **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
@@ -27,12 +27,12 @@ export const Example = () => {
 }
 
 ```
-### `TypeWriterScroll` component
-To use the `<TypeWriterScroll> `component, the principal diference between the normal is that it uses the library [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for show  the element when is in the viewport . You need pass it the following props:
+### `TypeWriterInView` component
+To use the `<TypeWriterInView> `component, the principal diference between the normal is that it uses the library [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) for show  the element when is in the viewport . You need pass it the following props:
 
 | Name                   | Type                      | Default     | Description                                                                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **elementType**               | `Element`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
+| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
 | **text**         | `string`                  | `required`     | A string to apply the effect..
 | **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
 | **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
