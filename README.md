@@ -19,7 +19,9 @@ To use the `<TypeWriter> `component, you need pass it the following props:
 | **text**         | `string`                  | `required`     | A string to apply the effect..
 | **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
 | **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
-| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to write
+| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to write |
+
+
 Example:
 ```tsx
 import { TypeWriterInScroll } from './components/TypeWriter'
@@ -43,7 +45,9 @@ To use the `<TypeWriterInView> `component, the principal diference between the n
 | **text**         | `string`                  | `required`     | A string to apply the effect..
 | **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
 | **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
-| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to write
+| **delay**           | `number (optional)`                  | `0` | A number indicating the  delay in milliseconds to start to write |
+
+
 Example:
 ```tsx
 import { TypeWriterInView } from './components/TypeWriterInView'
