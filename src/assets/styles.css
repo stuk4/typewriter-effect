@@ -43,4 +43,22 @@ body, *{
     -moz-hyphens: manual;
     -webkit-hyphens: manual;
   }
-  
+.typewriter-blink::after{
+  -webkit-animation: blink 1s steps(5, start) infinite;
+  animation: blink .6s steps(5, start) infinite;
+  content: "▍";
+  margin-left: .25rem;
+  vertical-align: baseline
+}
+
+@-webkit-keyframes blink {
+    to {
+        visibility: hidden
+    }
+}
+
+  @keyframes blink {
+    to {
+        visibility: hidden
+    }
+}
