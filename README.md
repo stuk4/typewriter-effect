@@ -15,7 +15,7 @@ To use the `<TypeWriter> `component, you need pass it the following props:
 
 | Name                   | Type                      | Default     | Description                                                                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
+| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface  ).  |
 | **text**         | `string`                  | `required`     | A string to apply the effect..
 | **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
 | **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
@@ -39,7 +39,7 @@ To use the `<TypeWriterInView> `component, the principal diference between the n
 
 | Name                   | Type                      | Default     | Description                                                                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface :tw-1f609: ).  |
+| **elementType**               | `string`                 | `required`  | Is the element to render (if you want a more types of elements only edit its interface  ).  |
 | **text**         | `string`                  | `required`     | A string to apply the effect..
 | **interval**           | `number (optional)` | `20` | The interval between character writed                                                                                                                                               |
 | **classNames**  | `string (optional)`                 | `""`     |  ClassName to add to the Element created                                                                                                                                                                                      |
