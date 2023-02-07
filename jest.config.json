@@ -1,7 +1,0 @@
-{
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "fakeTimers": {"enableGlobally": true}
-}

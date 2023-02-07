@@ -1,33 +1,48 @@
 import React from "react";
-import { render } from '@testing-library/react';
-import {TypeWriterInScroll} from '../../src/components/TypeWriterInView';
-import {setupIntersectionMocking, resetIntersectionMocking} from 'react-intersection-observer/test-utils';
+import { render, screen, waitFor } from '@testing-library/react';
 
-/**
- * @jest-environment jsdom
-*/
+import {mockAllIsIntersecting} from 'react-intersection-observer/test-utils';
+import { TypeWriterInView } from '../../src/components/TypeWriterInView';
+
 
 const ReactTestRenderer = require('react-test-renderer');
 
 
-jest.mock('../../src/utils/handleTypeWriter');
-
 
 describe('TypeWriter component', () => {
+    const tag = "h1"
+    const text = "Test text"
 
-    beforeEach(() => {
-        setupIntersectionMocking(jest.fn);
-    });
-
-    afterEach(() => {
-        jest.clearAllMocks();
-        resetIntersectionMocking();
-    });
+    it('should write the input text when is visible in viewport' , async() =>{
+        
+        render(
+          <TypeWriterInView elementType={tag} text={text} />
+        );
+        mockAllIsIntersecting(true);
+        const element = screen.getByTestId('typewriter-element');
+        await waitFor(() =>{
+          expect(element).toHaveTextContent(text)
+        })
+    })
+    it('should not write the input text when is visible in viewport' , async() =>{
+        
+        render(
+          <TypeWriterInView elementType={tag} text={text} />
+        );
+        mockAllIsIntersecting(false);
+        const element = screen.getByTestId('typewriter-element');
+        await waitFor(() =>{
+          expect(element).toHaveTextContent("")
+        })
+    })
 
     it('renders the correct element type', () => {
-        const tag = "h1"
-        const {getByTestId} = render (<TypeWriterInScroll elementType={tag}
-            text="Test text"/>);
+        
+        const {getByTestId} = render 
+        (<TypeWriterInView 
+            elementType={tag}
+            text={text} />
+            );
         const element = getByTestId('typewriter-element');
         expect(element.tagName.toLowerCase()).toBe(tag);
     });
@@ -35,7 +50,7 @@ describe('TypeWriter component', () => {
 
     it('has the correct class name', () => {
         const className = 'test-class';
-        const {getByTestId} = render (<TypeWriterInScroll elementType="h1" text="Test text"
+        const {getByTestId} = render (<TypeWriterInView elementType="h1" text="Test text"
             classNames={className}/>);
         const element = getByTestId('typewriter-element');
         expect(element.classList.contains(className)).toBe(true);
@@ -44,7 +59,7 @@ describe('TypeWriter component', () => {
 
 
     it('matches the snapshot', () => {
-        const tree = ReactTestRenderer.create (<TypeWriterInScroll elementType="h1" text="Test text"/>).toJSON();
+        const tree = ReactTestRenderer.create (<TypeWriterInView elementType="h1" text="Test text"/>).toJSON();
         expect(tree).toMatchSnapshot();
     });
 });
