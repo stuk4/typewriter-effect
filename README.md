@@ -24,7 +24,7 @@ To use the `<TypeWriter> `component, you need pass it the following props:
 
 Example:
 ```tsx
-import { TypeWriterInScroll } from './components/TypeWriter'
+import { TypeWriter } from './components/TypeWriter'
 
 export const Example = () => {
   return (
